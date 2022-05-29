@@ -1,5 +1,5 @@
 using AElf.Sdk.CSharp.State;
-
+using System;
 namespace DemeterGift
 {
     /// <summary>
@@ -9,8 +9,10 @@ namespace DemeterGift
     {
         public Int32State EventIds { get; set; }
         public Int32State TokenIds { get; set; }
+        public Int32State EventTokenIds { get; set; }
         public MappedState<int, string> EventUris { get; set; }
-        public MappedState<int, string> TokenUris { get; set; } 
-        public MappedState<int, string[2]> AllEventTokens { get; set; }
+        public MappedState<int, string> TokenUris { get; set; }
+        public MappedState<int, EventToken> AllEventTokens { get; set; }
+        public MappedState<int, EventToken> SearchedEventTokens { get; set; }
     }
 }

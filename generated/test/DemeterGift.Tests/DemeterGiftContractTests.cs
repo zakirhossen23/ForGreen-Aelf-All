@@ -76,11 +76,26 @@ namespace DemeterGift
             // Get a stub for testing.
             var keyPair = SampleAccount.Accounts.First().KeyPair;
             var stub = GetDemeterGiftContractStub(keyPair);
-
+            
 
             var OneEvent =StringValue.Parser.ParseJson( (await stub.getOneEvent.SendAsync(new StringValue { Value="0"})).Output.ToString());
-
+        
             System.Console.WriteLine(OneEvent.Value);
         }
+
+        [Fact]
+        public async Task TestCreatingToken()
+        {
+            await TestCreateEvent();
+            // Get a stub for testing.
+            var keyPair = SampleAccount.Accounts.First().KeyPair;
+            var stub = GetDemeterGiftContractStub(keyPair);
+
+            var TokenID =  await stub.InsertAllEventToken.SendAsync(new InsertEventTokenInput { EventID="0",TokenURI="{\"Title\":\"NFT 1\"}"});
+
+
+            System.Console.WriteLine(TokenID);
+        }
+
     }
 }

@@ -33,20 +33,52 @@ service DemeterGiftContract {
     // an action defined as a gRPC service method.
     // this action take a google.protobuf.Empty (placeholder for void) as input
     // and returns a custom defined type: HelloReturn.
-    rpc Hello (google.protobuf.Empty) returns (google.protobuf.StringValue) { }
+    rpc Hello (google.protobuf.Empty) returns (google.protobuf.StringValue) { 
+        option (aelf.is_view) = true;
+    }
     
     //Event
-    rpc CreateEvent (google.protobuf.StringValue) returns (google.protobuf.StringValue) { }
+    rpc CreateEvent (google.protobuf.StringValue) returns (google.protobuf.StringValue) { 
+    }
 
-    rpc getTotalEvent (google.protobuf.Empty) returns (google.protobuf.StringValue) { }
+    rpc getTotalEvent (google.protobuf.Empty) returns (google.protobuf.StringValue) {
+        option (aelf.is_view) = true;    
+    }
 
-    rpc getOneEvent (google.protobuf.StringValue) returns (google.protobuf.StringValue) { }
+    rpc getOneEvent (google.protobuf.StringValue) returns (google.protobuf.StringValue) { 
+        option (aelf.is_view) = true;
+    }
 
     //Token
-    rpc CreateToken (google.protobuf.StringValue) returns (google.protobuf.StringValue) { }
+    rpc CreateToken (google.protobuf.StringValue) returns (google.protobuf.StringValue) {
+    }
 
-    rpc getTotalToken (google.protobuf.Empty) returns (google.protobuf.StringValue) { }
+    rpc getTotalToken (google.protobuf.Empty) returns (google.protobuf.StringValue) { 
+        option (aelf.is_view) = true;
+    }
 
-    rpc getOneToken (google.protobuf.StringValue) returns (google.protobuf.StringValue) { }
+    rpc getOneToken (google.protobuf.StringValue) returns (google.protobuf.StringValue) { 
+        option (aelf.is_view) = true;
+    }
 
+    //Event + Token
+    rpc InsertAllEventToken (InsertEventTokenInput) returns (google.protobuf.Int32Value) { }
+    rpc SearchAllTokenByEventID (google.protobuf.StringValue) returns (SearchedList) { }
+
+}
+
+
+message InsertEventTokenInput {
+    string eventID = 1;
+    string TokenURI = 2;
+}
+
+
+message EventToken {   
+     int32 eventID = 1;
+     string TokenURI = 2;
+}
+
+message SearchedList {
+    repeated string Tokens = 1;
 }
