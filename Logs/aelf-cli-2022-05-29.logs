@@ -1,0 +1,143 @@
+2022-05-29 13:06:29.586 +06:00 [INF] AElf Cli (https://aelf.io)
+2022-05-29 13:06:29.619 +06:00 [ERR] Could not find a part of the path 'H:\Codes\DemeterGiftAelf\Wordlists\english.txt'.
+System.IO.DirectoryNotFoundException: Could not find a part of the path 'H:\Codes\DemeterGiftAelf\Wordlists\english.txt'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.InternalReadAllLines(String path, Encoding encoding)
+   at System.IO.File.ReadAllLines(String path)
+   at AElf.BIP39.BipWordlistProvider.LoadWordlist(BipWordlistLanguage language) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.BIP39\BipWordlistProvider.cs:line 27
+   at AElf.BIP39.EntropyService.ConvertEntropyToMnemonic(Entropy entropy) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.BIP39\IEntropyService.cs:line 26
+   at AElf.BIP39.Bip39Service.ConvertEntropyToMnemonic(Entropy entropy) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.BIP39\Bip39Service.cs:line 38
+   at AElf.BIP39.Bip39Service.GenerateMnemonic(Int32 strength, BipWordlistLanguage language) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.BIP39\Bip39Service.cs:line 33
+   at AElf.Cli.Commands.CreateCommand.ExecuteAsync(CommandLineArgs commandLineArgs) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Commands\CreateCommand.cs:line 29
+   at AElf.Cli.AElfCliService.RunAsync(String[] args) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\AElfCliService.cs:line 52
+2022-05-29 13:07:44.865 +06:00 [INF] AElf Cli (https://aelf.io)
+2022-05-29 13:07:44.924 +06:00 [WRN] Faucet command:  is not supported!
+
+
+Usage:
+
+    aelf faucet <command> [options]
+
+    command: take
+
+Options:
+
+    -s|--symbol: Token symbol that you want to operate on. Default value is ELF.
+    -c|--count:  Token amount that you want to operate on. Default value is 100_00000000 (100 ELF).
+
+Examples:
+
+    aelf faucet take
+    aelf faucet take -s ELF -c 10000000000
+
+See the documentation for more info: https://docs.aelf.io
+
+2022-05-29 13:07:52.010 +06:00 [INF] AElf Cli (https://aelf.io)
+2022-05-29 13:09:12.424 +06:00 [INF] AElf Cli (https://aelf.io)
+2022-05-29 13:09:23.123 +06:00 [INF] AElf Cli (https://aelf.io)
+2022-05-29 13:09:23.236 +06:00 [INF] Formatting params: {"symbol":"ELF","amount":10000000000}
+2022-05-29 13:09:23.836 +06:00 [INF] Actual params: {"symbol":"ELF","amount":10000000000}
+2022-05-29 13:09:24.694 +06:00 [ERR] Could not load account:
+AElf.Cryptography.Exceptions.KeyStoreNotFoundException: Keystore file not found.
+ ---> System.IO.FileNotFoundException: Could not find file 'C:\Users\zakir\AppData\Local\aelf\keys\L9jYCp27aKJp5CBvkk2b9zuYryLGCBTcZfGybksvh1DB3pu6J.json'.
+File name: 'C:\Users\zakir\AppData\Local\aelf\keys\L9jYCp27aKJp5CBvkk2b9zuYryLGCBTcZfGybksvh1DB3pu6J.json'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.OpenText(String path)
+   at AElf.Cli.Infrastructure.AElfKeyStore.<>c__DisplayClass13_1.<ReadKeyPairAsync>b__0() in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Infrastructure\AElfKeyStore.cs:line 88
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at AElf.Cli.Infrastructure.AElfKeyStore.ReadKeyPairAsync(String address, String password) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Infrastructure\AElfKeyStore.cs:line 86
+   --- End of inner exception stack trace ---
+   at AElf.Cli.Infrastructure.AElfKeyStore.ReadKeyPairAsync(String address, String password) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Infrastructure\AElfKeyStore.cs:line 99
+   at AElf.Cli.Infrastructure.AElfKeyStore.UnlockAccountAsync(String address, String password) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Infrastructure\AElfKeyStore.cs:line 42
+2022-05-29 13:09:24.766 +06:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AElf.Cli.Services.AccountsService.SignAsync(String address, String password, Byte[] data) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Services\IAccountsService.cs:line 48
+   at AElf.Cli.Services.BlockChainService.GetSignatureAsync(String rawTransaction) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Services\IBlockChainService.cs:line 200
+   at AElf.Cli.Services.BlockChainService.SendTransactionAsync(String contract, String method, String params, String endpoint) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Services\IBlockChainService.cs:line 63
+   at AElf.Cli.Services.FaucetService.TakeAsync(String symbol, Int64 amount) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Services\IFaucetService.cs:line 30
+   at AElf.Cli.Commands.FaucetCommand.ExecuteAsync(CommandLineArgs commandLineArgs) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Commands\FaucetCommand.cs:line 43
+   at AElf.Cli.AElfCliService.RunAsync(String[] args) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\AElfCliService.cs:line 52
+2022-05-29 13:09:47.508 +06:00 [INF] AElf Cli (https://aelf.io)
+2022-05-29 13:09:47.610 +06:00 [INF] Formatting params: {"symbol":"ELF","amount":10000000000}
+2022-05-29 13:09:48.146 +06:00 [INF] Actual params: {"symbol":"ELF","amount":10000000000}
+2022-05-29 13:09:48.486 +06:00 [ERR] Could not load account:
+AElf.Cryptography.Exceptions.KeyStoreNotFoundException: Keystore file not found.
+ ---> System.IO.FileNotFoundException: Could not find file 'C:\Users\zakir\AppData\Local\aelf\keys\L9jYCp27aKJp5CBvkk2b9zuYryLGCBTcZfGybksvh1DB3pu6J.json'.
+File name: 'C:\Users\zakir\AppData\Local\aelf\keys\L9jYCp27aKJp5CBvkk2b9zuYryLGCBTcZfGybksvh1DB3pu6J.json'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.OpenText(String path)
+   at AElf.Cli.Infrastructure.AElfKeyStore.<>c__DisplayClass13_1.<ReadKeyPairAsync>b__0() in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Infrastructure\AElfKeyStore.cs:line 88
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at AElf.Cli.Infrastructure.AElfKeyStore.ReadKeyPairAsync(String address, String password) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Infrastructure\AElfKeyStore.cs:line 86
+   --- End of inner exception stack trace ---
+   at AElf.Cli.Infrastructure.AElfKeyStore.ReadKeyPairAsync(String address, String password) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Infrastructure\AElfKeyStore.cs:line 99
+   at AElf.Cli.Infrastructure.AElfKeyStore.UnlockAccountAsync(String address, String password) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Infrastructure\AElfKeyStore.cs:line 42
+2022-05-29 13:09:48.536 +06:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AElf.Cli.Services.AccountsService.SignAsync(String address, String password, Byte[] data) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Services\IAccountsService.cs:line 48
+   at AElf.Cli.Services.BlockChainService.GetSignatureAsync(String rawTransaction) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Services\IBlockChainService.cs:line 200
+   at AElf.Cli.Services.BlockChainService.SendTransactionAsync(String contract, String method, String params, String endpoint) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Services\IBlockChainService.cs:line 63
+   at AElf.Cli.Services.FaucetService.TakeAsync(String symbol, Int64 amount) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Services\IFaucetService.cs:line 30
+   at AElf.Cli.Commands.FaucetCommand.ExecuteAsync(CommandLineArgs commandLineArgs) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Commands\FaucetCommand.cs:line 43
+   at AElf.Cli.AElfCliService.RunAsync(String[] args) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\AElfCliService.cs:line 52
+2022-05-29 13:10:32.170 +06:00 [INF] AElf Cli (https://aelf.io)
+2022-05-29 13:10:32.277 +06:00 [INF] Formatting params: {"symbol":"ELF","amount":10000000000}
+2022-05-29 13:10:32.807 +06:00 [INF] Actual params: {"symbol":"ELF","amount":10000000000}
+2022-05-29 13:10:33.071 +06:00 [ERR] Could not load account:
+AElf.Cryptography.Exceptions.KeyStoreNotFoundException: Keystore file not found.
+ ---> System.IO.FileNotFoundException: Could not find file 'C:\Users\zakir\AppData\Local\aelf\keys\L9jYCp27aKJp5CBvkk2b9zuYryLGCBTcZfGybksvh1DB3pu6J.json'.
+File name: 'C:\Users\zakir\AppData\Local\aelf\keys\L9jYCp27aKJp5CBvkk2b9zuYryLGCBTcZfGybksvh1DB3pu6J.json'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.OpenText(String path)
+   at AElf.Cli.Infrastructure.AElfKeyStore.<>c__DisplayClass13_1.<ReadKeyPairAsync>b__0() in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Infrastructure\AElfKeyStore.cs:line 88
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at AElf.Cli.Infrastructure.AElfKeyStore.ReadKeyPairAsync(String address, String password) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Infrastructure\AElfKeyStore.cs:line 86
+   --- End of inner exception stack trace ---
+   at AElf.Cli.Infrastructure.AElfKeyStore.ReadKeyPairAsync(String address, String password) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Infrastructure\AElfKeyStore.cs:line 99
+   at AElf.Cli.Infrastructure.AElfKeyStore.UnlockAccountAsync(String address, String password) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Infrastructure\AElfKeyStore.cs:line 42
+2022-05-29 13:10:33.122 +06:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AElf.Cli.Services.AccountsService.SignAsync(String address, String password, Byte[] data) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Services\IAccountsService.cs:line 48
+   at AElf.Cli.Services.BlockChainService.GetSignatureAsync(String rawTransaction) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Services\IBlockChainService.cs:line 200
+   at AElf.Cli.Services.BlockChainService.SendTransactionAsync(String contract, String method, String params, String endpoint) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Services\IBlockChainService.cs:line 63
+   at AElf.Cli.Services.FaucetService.TakeAsync(String symbol, Int64 amount) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Services\IFaucetService.cs:line 30
+   at AElf.Cli.Commands.FaucetCommand.ExecuteAsync(CommandLineArgs commandLineArgs) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\Commands\FaucetCommand.cs:line 43
+   at AElf.Cli.AElfCliService.RunAsync(String[] args) in C:\Users\zakir\Downloads\aelf-cli-master\aelf-cli-master\src\AElf.Cli\AElfCliService.cs:line 52
