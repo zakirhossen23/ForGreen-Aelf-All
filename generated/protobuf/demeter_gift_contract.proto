@@ -60,14 +60,35 @@ service DemeterGiftContract {
     rpc getOneToken (google.protobuf.StringValue) returns (google.protobuf.StringValue) { 
         option (aelf.is_view) = true;
     }
+    //Bid
+    rpc CreateBid (google.protobuf.StringValue) returns (google.protobuf.StringValue) {
+    }
+
+    rpc getTotalBid (google.protobuf.Empty) returns (google.protobuf.StringValue) { 
+        option (aelf.is_view) = true;
+    }
+
+    rpc getOneBid (google.protobuf.StringValue) returns (google.protobuf.StringValue) { 
+        option (aelf.is_view) = true;
+    }
+
+
+
 
     //Event + Token
     rpc InsertAllEventToken (InsertEventTokenInput) returns (google.protobuf.Int32Value) { }
     rpc SearchAllTokenByEventID (google.protobuf.StringValue) returns (SearchedList) { }
 
+    
+    //Token + Bid
+    rpc InsertAllTokenBid (InsertTokenBidInput) returns (google.protobuf.Int32Value) { }
+    rpc SearchAllBidByTokenID (google.protobuf.StringValue) returns (SearchedListBids) { }
+
 }
 
-
+/**************************
+     Event and Token     
+**************************/
 message InsertEventTokenInput {
     string eventID = 1;
     string TokenURI = 2;
@@ -82,3 +103,23 @@ message EventToken {
 message SearchedList {
     repeated string Tokens = 1;
 }
+
+
+/**************************
+     Token and Bid     
+**************************/
+message InsertTokenBidInput {
+    string tokenID = 1;
+    string bidURI = 2;
+}
+
+
+message TokenBid {   
+     int32 tokenID = 1;
+     string bidURI = 2;
+}
+
+message SearchedListBids {
+    repeated string Bids = 1;
+}
+
