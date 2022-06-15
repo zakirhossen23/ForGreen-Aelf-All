@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Modularity;
 
-namespace AElf.Boilerplate.DemeterGiftContract.Launcher
+namespace AElf.Boilerplate.ForGreenContract.Launcher
 {
     public class Startup
     {

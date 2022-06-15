@@ -1,11 +1,11 @@
 using AElf.Sdk.CSharp.State;
 using System;
-namespace DemeterGift
+namespace ForGreen
 {
     /// <summary>
     /// The state class of the contract, it inherits from the AElf.Sdk.CSharp.State.ContractState type. 
     /// </summary>
-    public class DemeterGiftContractState : ContractState
+    public class ForGreenContractState : ContractState
     {
         public Int32State EventIds { get; set; }
         public Int32State TokenIds { get; set; }

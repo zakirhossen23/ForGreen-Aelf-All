@@ -22,13 +22,13 @@ import "google/protobuf/wrappers.proto";
 
 // the name of the C# namespace in which the contract code will be,
 // generated code will also be in this namespace.
-option csharp_namespace = "DemeterGift";
+option csharp_namespace = "ForGreen";
 
 // the contract definition: a gRPC service definition.
-service DemeterGiftContract {
+service ForGreenContract {
 
     // the full name of the C# class that will contain the state (here <namespace>.<state-class-name> format).
-    option (aelf.csharp_state) = "DemeterGiftContractState";
+    option (aelf.csharp_state) = "ForGreenContractState";
 
     // an action defined as a gRPC service method.
     // this action take a google.protobuf.Empty (placeholder for void) as input

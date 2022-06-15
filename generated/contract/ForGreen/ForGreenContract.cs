@@ -5,7 +5,7 @@ using System;
 namespace ForGreen
 {
     /// <summary>
-    /// The C# implementation of the contract defined in demeter_gift_contract.proto that is located in the "protobuf"
+    /// The C# implementation of the contract defined in forgreen_contract.proto that is located in the "protobuf"
     /// folder.
     /// Notice that it inherits from the protobuf generated code. 
     /// </summary>

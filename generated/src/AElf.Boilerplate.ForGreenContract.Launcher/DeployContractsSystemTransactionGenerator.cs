@@ -11,7 +11,7 @@ using AElf.Types;
 using Google.Protobuf;
 using Microsoft.Extensions.Options;
 
-namespace AElf.Boilerplate.DemeterGiftContract.Launcher
+namespace AElf.Boilerplate.ForGreenContract.Launcher
 {
     public class DeployContractsSystemTransactionGenerator : ISystemTransactionGenerator
     {
@@ -49,7 +49,7 @@ namespace AElf.Boilerplate.DemeterGiftContract.Launcher
         private byte[] GetContractCodes()
         {
             return ContractsDeployer.GetContractCodes<DeployContractsSystemTransactionGenerator>(_contractOptions
-                .GenesisContractDir)["DemeterGift"];
+                .GenesisContractDir)["ForGreen"];
         }
     }
 }

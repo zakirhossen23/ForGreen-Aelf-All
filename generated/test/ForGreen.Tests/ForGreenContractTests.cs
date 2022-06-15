@@ -8,9 +8,9 @@ using Google.Protobuf.WellKnownTypes;
 using Shouldly;
 using Xunit;
 
-namespace DemeterGift
+namespace ForGreen
 {
-    public class DemeterGiftContractTests : DemeterGiftContractTestBase
+    public class ForGreenContractTests : ForGreenContractTestBase
     {
         //string MyDictionaryToJson(Dictionary<string, string> dict)
         //{
@@ -22,7 +22,7 @@ namespace DemeterGift
         //public async Task CreateEvent(string eventUri)
         //{
         //    var keyPair = SampleAccount.Accounts.First().KeyPair;
-        //    var stub = GetDemeterGiftContractStub(keyPair);
+        //    var stub = GetForGreenContractStub(keyPair);
         //    var input = new StringValue
         //    {
         //        Value = eventUri
@@ -47,7 +47,7 @@ namespace DemeterGift
         {
             //// Get a stub for testing.
             //var keyPair = SampleAccount.Accounts.First().KeyPair;
-            //var stub = GetDemeterGiftContractStub(keyPair);
+            //var stub = GetForGreenContractStub(keyPair);
 
             ////Custom input for Create Event
             //var input = createEventGather("Event 1", "25/9/2022", "500", "https://google.com/favicon.ico", "ELF_xgFX3P8yT46kEGYZJyWCu9pvb4zUZ8FcoRzCybMY8TWvMuTHs_tDVV");
@@ -75,7 +75,7 @@ namespace DemeterGift
 
            // // Get a stub for testing.
            // var keyPair = SampleAccount.Accounts.First().KeyPair;
-           // var stub = GetDemeterGiftContractStub(keyPair);
+           // var stub = GetForGreenContractStub(keyPair);
             
 
            // var OneEvent =StringValue.Parser.ParseJson( (await stub.getOneEvent.SendAsync(new StringValue { Value="0"})).Output.ToString());
@@ -89,7 +89,7 @@ namespace DemeterGift
             //await TestCreateEvent();
             //// Get a stub for testing.
             //var keyPair = SampleAccount.Accounts.First().KeyPair;
-            //var stub = GetDemeterGiftContractStub(keyPair);
+            //var stub = GetForGreenContractStub(keyPair);
 
             //var TokenID =  await stub.InsertAllEventToken.SendAsync(new InsertEventTokenInput { EventID="0",TokenURI="{\"Title\":\"NFT 1\"}"});
 

@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>DemeterGift</RootNamespace>
+    <RootNamespace>ForGreen</RootNamespace>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -32,13 +32,13 @@
     </ContractMessage>
   </ItemGroup>
   <ItemGroup>
-    <ContractStub Include="..\..\protobuf\demeter_gift_contract.proto">
-      <Link>Protobuf\Proto\demeter_gift_contract.proto</Link>
+    <ContractStub Include="..\..\protobuf\forgreen_contract.proto">
+      <Link>Protobuf\Proto\forgreen_contract.proto</Link>
     </ContractStub>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\contract\DemeterGift\DemeterGift.csproj" />
+    <ProjectReference Include="..\..\contract\ForGreen\ForGreen.csproj" />
     <ProjectReference Include="..\..\src\AElf.Boilerplate.TestBase\AElf.Boilerplate.TestBase.csproj" />
   </ItemGroup>
 

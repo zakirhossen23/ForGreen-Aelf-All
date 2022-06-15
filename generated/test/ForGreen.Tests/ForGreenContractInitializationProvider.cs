@@ -3,9 +3,9 @@ using AElf.Boilerplate.TestBase;
 using AElf.Kernel.SmartContract.Application;
 using AElf.Types;
 
-namespace DemeterGift
+namespace ForGreen
 {
-    public class DemeterGiftContractInitializationProvider : IContractInitializationProvider
+    public class ForGreenContractInitializationProvider : IContractInitializationProvider
     {
         public List<ContractInitializationMethodCall> GetInitializeMethodList(byte[] contractCode)
         {
@@ -13,6 +13,6 @@ namespace DemeterGift
         }
 
         public Hash SystemSmartContractName { get; } = DAppSmartContractAddressNameProvider.Name;
-        public string ContractCodeName { get; } = "DemeterGiftContract";
+        public string ContractCodeName { get; } = "ForGreenContract";
     }
 }

@@ -7,24 +7,24 @@ using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp;
 using Volo.Abp.Modularity;
 
-namespace DemeterGift
+namespace ForGreen
 {
     [DependsOn(typeof(MainChainDAppContractTestModule))]
-    public class DemeterGiftContractTestModule : MainChainDAppContractTestModule
+    public class ForGreenContractTestModule : MainChainDAppContractTestModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            context.Services.AddSingleton<IContractInitializationProvider, DemeterGiftContractInitializationProvider>();
+            context.Services.AddSingleton<IContractInitializationProvider, ForGreenContractInitializationProvider>();
         }
 
         public override void OnPreApplicationInitialization(ApplicationInitializationContext context)
         {
             var contractCodeProvider = context.ServiceProvider.GetService<IContractCodeProvider>();
-            var contractDllLocation = typeof(DemeterGiftContract).Assembly.Location;
+            var contractDllLocation = typeof(ForGreenContract).Assembly.Location;
             var contractCodes = new Dictionary<string, byte[]>(contractCodeProvider.Codes)
             {
                 {
-                    new DemeterGiftContractInitializationProvider().ContractCodeName,
+                    new ForGreenContractInitializationProvider().ContractCodeName,
                     File.ReadAllBytes(contractDllLocation)
                 }
             };
