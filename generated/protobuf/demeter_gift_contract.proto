@@ -34,7 +34,6 @@ service DemeterGiftContract {
     // this action take a google.protobuf.Empty (placeholder for void) as input
     // and returns a custom defined type: HelloReturn.
     rpc Hello (google.protobuf.Empty) returns (google.protobuf.StringValue) { 
-        option (aelf.is_view) = true;
     }
     
     //Event
@@ -42,11 +41,9 @@ service DemeterGiftContract {
     }
 
     rpc getTotalEvent (google.protobuf.Empty) returns (google.protobuf.StringValue) {
-        option (aelf.is_view) = true;    
     }
 
     rpc getOneEvent (google.protobuf.StringValue) returns (google.protobuf.StringValue) { 
-        option (aelf.is_view) = true;
     }
 
     //Token
@@ -54,22 +51,18 @@ service DemeterGiftContract {
     }
 
     rpc getTotalToken (google.protobuf.Empty) returns (google.protobuf.StringValue) { 
-        option (aelf.is_view) = true;
     }
 
     rpc getOneToken (google.protobuf.StringValue) returns (google.protobuf.StringValue) { 
-        option (aelf.is_view) = true;
     }
     //Bid
     rpc CreateBid (google.protobuf.StringValue) returns (google.protobuf.StringValue) {
     }
 
     rpc getTotalBid (google.protobuf.Empty) returns (google.protobuf.StringValue) { 
-        option (aelf.is_view) = true;
     }
 
     rpc getOneBid (google.protobuf.StringValue) returns (google.protobuf.StringValue) { 
-        option (aelf.is_view) = true;
     }
 
 

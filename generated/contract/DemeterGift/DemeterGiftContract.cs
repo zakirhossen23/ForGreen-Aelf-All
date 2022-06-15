@@ -2,14 +2,14 @@ using AElf.Types;
 using Google.Protobuf.WellKnownTypes;
 using System;
 
-namespace DemeterGift
+namespace ForGreen
 {
     /// <summary>
     /// The C# implementation of the contract defined in demeter_gift_contract.proto that is located in the "protobuf"
     /// folder.
     /// Notice that it inherits from the protobuf generated code. 
     /// </summary>
-    public class DemeterGiftContract : DemeterGiftContractContainer.DemeterGiftContractBase
+    public class ForGreenContract : ForGreenContractContainer.ForGreenContractBase
     {
 
 
