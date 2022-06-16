@@ -105,14 +105,14 @@ namespace ForGreen
         {
             var togehter = new Google.Protobuf.Collections.MapField<int, string>();
             togehter[EventID] = TokenURI;
-            State.AllEventTokens[EventTokenID] = new EventToken { EventID = EventID, TokenURI = TokenURI };
-        }       
+            State.AllEventTokens[EventTokenID] = new EventToken { EventID = EventID, TokenID = State.TokenIds.Value - 1, TokenURI = TokenURI };
+        }
         public override Int32Value InsertAllEventToken(InsertEventTokenInput input)  //inserting
         {
             string tokenURI = input.TokenURI;
             string eventID = input.EventID;
 
-            CreateToken(tokenURI);
+            CreateToken(tokenURI);//creating NFT
             setAllEventToken(State.EventTokenIds.Value, int.Parse(eventID), tokenURI);
             State.EventTokenIds.Value = State.EventTokenIds.Value + 1;
             return new Int32Value { Value = State.TokenIds.Value };
@@ -123,8 +123,9 @@ namespace ForGreen
             for (int i = 0; i < State.EventTokenIds.Value; i++)
             {
                 var EventToken = State.AllEventTokens[i];
-                if (EventToken.EventID == int.Parse( eventID.Value))
+                if (EventToken.EventID == int.Parse(eventID.Value))
                 {
+                    searchedList.TokenID.Add (EventToken.TokenID);
                     searchedList.Tokens.Add(EventToken.TokenURI);
                 }
             }

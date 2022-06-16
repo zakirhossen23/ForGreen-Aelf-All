@@ -90,11 +90,13 @@ message InsertEventTokenInput {
 
 message EventToken {   
      int32 eventID = 1;
-     string TokenURI = 2;
+     int32 tokenID = 2;
+     string TokenURI = 3;
 }
 
 message SearchedList {
-    repeated string Tokens = 1;
+     repeated int32 tokenID = 1;
+    repeated string Tokens = 2;
 }
 
 
