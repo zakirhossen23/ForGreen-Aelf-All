@@ -125,11 +125,23 @@ namespace ForGreen
                 var EventToken = State.AllEventTokens[i];
                 if (EventToken.EventID == int.Parse(eventID.Value))
                 {
-                    searchedList.TokenID.Add (EventToken.TokenID);
+                    searchedList.TokenID.Add(EventToken.TokenID);
                     searchedList.Tokens.Add(EventToken.TokenURI);
                 }
             }
             return searchedList;
+        }
+        public int getEventTokenID(int EventID, string TokenURI)
+        {
+            for (int i = 0; i < State.EventTokenIds.Value; i++)
+            {
+                var EventToken = State.AllEventTokens[i];
+                if (EventToken.EventID == EventID && EventToken.TokenURI == TokenURI)
+                {
+                    return i;
+                }
+            }
+            return 0;
         }
 
 
@@ -147,10 +159,17 @@ namespace ForGreen
         public override Int32Value InsertAllTokenBid(InsertTokenBidInput input) //inserting
         {
             string bidURI = input.BidURI;
-            string tokenID = input.TokenID;
+            int tokenID = input.TokenID;
+            int eventID = input.EventID;
+            int EventTokenID = getEventTokenID(eventID, State.TokenUris[tokenID]);
+            string updatedURI = input.UpdatedURI;
+
+            setAllEventToken(EventTokenID, eventID, updatedURI);
+
+            State.TokenUris[tokenID] = updatedURI;
 
             CreateBid(bidURI);
-            setAllTokenBid(State.TokenBidIds.Value, int.Parse(tokenID), bidURI);
+            setAllTokenBid(State.TokenBidIds.Value, tokenID, bidURI);
             State.TokenBidIds.Value = State.TokenBidIds.Value + 1;
             return new Int32Value { Value = State.TokenIds.Value };
         }
@@ -169,6 +188,25 @@ namespace ForGreen
         }
 
 
+
+        /// <summary>
+        /// Reset
+        /// </summary>    
+        public override StringValue ResetAll(Empty empty)
+        {
+            for (int i = 0; i < State.EventIds.Value; i++) State.EventUris.Remove(i);
+            for (int i = 0; i < State.TokenIds.Value; i++) State.TokenUris.Remove(i);
+            for (int i = 0; i < State.BidIds.Value; i++) State.BidUris.Remove(i);
+            for (int i = 0; i < State.EventTokenIds.Value; i++) State.AllEventTokens.Remove(i);
+            for (int i = 0; i < State.TokenBidIds.Value; i++) State.AllTokenBids.Remove(i);
+            State.EventIds.Value = 0;
+            State.TokenIds.Value = 0;
+            State.BidIds.Value = 0;
+            State.EventTokenIds.Value = 0;
+            State.TokenBidIds.Value = 0;
+
+            return new StringValue { Value = "Done" };
+        }
 
     }
 }

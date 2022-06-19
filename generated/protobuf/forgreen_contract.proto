@@ -77,6 +77,10 @@ service ForGreenContract {
     rpc InsertAllTokenBid (InsertTokenBidInput) returns (google.protobuf.Int32Value) { }
     rpc SearchAllBidByTokenID (google.protobuf.StringValue) returns (SearchedListBids) { }
 
+
+    //Reseting
+     rpc ResetAll (google.protobuf.Empty) returns (google.protobuf.StringValue) { }
+
 }
 
 /**************************
@@ -104,8 +108,10 @@ message SearchedList {
      Token and Bid     
 **************************/
 message InsertTokenBidInput {
-    string tokenID = 1;
-    string bidURI = 2;
+    int32 tokenID = 1;
+    int32 eventID = 2;
+    string bidURI = 3;
+    string updatedURI = 4;
 }
 
 
